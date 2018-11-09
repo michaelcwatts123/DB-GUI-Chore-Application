@@ -36,7 +36,7 @@ export class MembersService {
     this.subject.next({...prevState, [type]: [...prevState[type], member]});
   }
 
-  editMember(member: Member) {
+  editMember(member: Member | Child) {
     const type = member.isParent ? 'parents' : 'children';
     const prevState = this.subject.value;
     const memberIndex = prevState[type].findIndex(mem => mem.id === member.id);
