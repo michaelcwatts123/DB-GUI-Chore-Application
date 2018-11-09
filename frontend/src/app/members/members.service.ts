@@ -1,4 +1,6 @@
+import { Child } from 'src/domain/models/child';
 import { Member } from 'src/domain/models/member';
+
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';
