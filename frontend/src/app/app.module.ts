@@ -1,3 +1,4 @@
+import { TasksModule } from './tasks/tasks.module';
 import { ParentsModule } from './parent/parents.module';
 import { MembersModule } from './members/members.module';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -33,14 +33,14 @@ import { MembersComponent } from './members/containers/members.component';
     NavbarComponent,
     TaskNotificationComponent,
     TasksDisplayComponent,
-    NavbarComponent,
-    ParentComponent
+    NavbarComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     MembersModule,
     ParentsModule,
+    TasksModule,
     NgbModule,
     FontAwesomeModule,
     AppRoutingModule,
