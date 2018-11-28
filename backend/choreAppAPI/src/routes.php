@@ -608,7 +608,7 @@ $app->get('/getTask/{id}/{id2}', function($request, $response, $args){
 
 $app->get('/getTaskAmount/{id}', function($request, $response, $args){
 
-    $sth = $this->db->prepare("SELECT count(taskID) FROM Tasks WHERE taskID=:id");
+    $sth = $this->db->prepare("SELECT count(taskID) FROM Tasks WHERE assigneeID=:id");
     $sth->bindParam("id", $args['id']);
     $sth->execute();
     $userInfo = $sth->fetchObject();
