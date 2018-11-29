@@ -28,7 +28,6 @@ export class TasksDisplayComponent implements OnInit {
     this.filterBy = 'all';
     if (this.tasks) {
       this.filterTasks();
-      console.log(this.tasks);
     }
   }
 

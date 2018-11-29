@@ -14,26 +14,30 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from 
           <h3>{{ member.firstName + " " + member.lastName }}</h3>
           <div *ngIf="member.isGrounded" class="badge badge-warning p-2">Grounded</div>
         </span>
-        <button (click)="deleteMember()"><fa-icon [icon]="faTimes"></fa-icon></button>
+        <button (click)="deleteMember()" class="faster-animated btn btn-warning"><fa-icon [icon]="faTimes"></fa-icon></button>
       </div>
       <div class="card-body">
         <div class="d-flex justify-content-around">
-          <div class="d-flex flex-column align-items-center" (click)="viewTasks()">
+          <div class="d-flex flex-column align-items-center">
+            <div class="h4">Rating</div>
+            <div id="rating-container">
+              <div *ngIf="member.rating === null; else stars">
+                <h5>None</h5>
+              </div>
+              <ng-template #stars>
+                <app-rating [numStars]="member.rating" id="rating" [ngClass]="{'opaque' : member.rating === null}"></app-rating>
+              </ng-template>
+            </div>
+          </div>
+           <div class="d-flex flex-column align-items-center" (click)="viewTasks()" id="tasks">
             <div class="h4">Tasks</div>
             <div class="h6">{{ member.tasks }}</div>
           </div>
         </div>
-        <div class="d-flex flex-column align-items-center">
-          <div>{{member.rating}}</div>
-        </div>
-        <div *ngIf="member.rating === null">
-          <h5>No Ratings</h5>
-        </div>
-        <app-rating [numStars]="member.rating"></app-rating>
       </div>
       <div class="card-footer d-flex justify-content-around">
-        <button class="btn btn-primary" (click)="editMember()">Edit</button>
-        <button [ngClass]="member.isGrounded ? 'btn btn-success' : 'btn btn-warning'"
+        <button class="faster-animated btn btn-primary" (click)="editMember()">Edit</button>
+        <button [ngClass]="member.isGrounded ? 'faster-animated btn btn-success' : 'faster-animated btn btn-warning'"
           (click)="toggleGround()">
           {{ member.isGrounded ? "Unground" : "Ground" }}
         </button>
