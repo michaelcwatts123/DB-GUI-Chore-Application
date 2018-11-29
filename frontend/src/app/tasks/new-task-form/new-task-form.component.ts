@@ -3,6 +3,7 @@ import { Task } from '../../../domain/models';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-new-task-form',
@@ -16,6 +17,7 @@ export class NewTaskFormComponent implements OnInit {
   task: Task;
   children: Child[];
   errors: any[];
+  faTimes = faTimes;
 
   constructor(
     private fb: FormBuilder, public activeModal: NgbActiveModal
