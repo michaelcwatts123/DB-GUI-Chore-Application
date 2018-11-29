@@ -11,8 +11,7 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
 })
 export class ChildrenService {
 
-  protected baseUrl =
-    'http://ec2-18-222-217-233.us-east-2.compute.amazonaws.com:8080';
+  protected baseUrl = 'http://18.217.5.234:8080';
 
   protected httpOptions = {
     headers: new HttpHeaders({

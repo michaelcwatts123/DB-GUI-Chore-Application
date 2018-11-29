@@ -16,8 +16,7 @@ export class AuthGuardService implements CanActivate {
   constructor(private _authService: AuthService, private _router: Router, private httpClient: HttpClient) {
   }
 
-  protected baseUrl =
-    'http://ec2-18-222-217-233.us-east-2.compute.amazonaws.com:8080';
+  protected baseUrl = 'http://18.217.5.234:8080';
 
     protected httpOptions = {
       headers: new HttpHeaders({
