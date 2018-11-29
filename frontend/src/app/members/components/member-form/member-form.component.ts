@@ -5,6 +5,7 @@ import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 import { Member } from 'src/domain/models/member';
 import { EventEmitter } from '@angular/core';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-member-form',
@@ -23,6 +24,7 @@ export class MemberFormComponent implements OnInit {
   @Output()
   processMember = new EventEmitter<FormGroup>();
 
+  faTimes = faTimes;
   // Allows for a member and form type to be passed to the component
   memberForm: FormGroup;
   passwordForm: FormGroup;

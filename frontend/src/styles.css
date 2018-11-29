@@ -1,14 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-.btn-primary {
-  background-color: #2176ff !important;
-  border-color: #2176ff !important;
-}
-
-.btn-success {
-  background-color: #2ec4b6 !important;
-  border-color: #2ec4b6 !important;
-}
-
 .btn-light {
   background-color: #f6f7f8 !important;
   border-color: #f6f7f8 !important;
@@ -60,6 +50,12 @@ nav {
   border-color: #eb3764;
 }
 
+.btn:not(:disabled):not(.disabled).hover,
+.btn:not(:disabled):not(.disabled):hover {
+  transition: 0.2s;
+  filter: brightness(96%);
+}
+
 .btn-success:not(:disabled):not(.disabled).active,
 .btn-success:not(:disabled):not(.disabled):active {
   color: #faf0f0;
@@ -90,9 +86,64 @@ nav {
   background-color: #eb3764;
 }
 
+.delete-btn {
+  color: #ffffff;
+}
+
 #header {
   border-radius: 0em;
   color: #f6f7f8;
   background: rgb(37,112,233);
   background: linear-gradient(34deg, rgba(37,112,233,1) 9%, rgba(36,182,255,1) 94%);
+}
+
+
+.btn span{
+  position: relative;
+}
+
+.fast-animated span,
+.fast-animated span:after,
+.fast-animated:hover span {
+  transition: 0.4s;
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+
+.faster-animated {
+  transition: 0.2s;
+  -moz-transition: 0.2s;
+  -webkit-transition: 0.2s;
+}
+
+.plus span:after {
+  content: '\002B';
+  margin-left: 0.5em;
+  position: absolute;
+  transform: scale(0);
+  transform-origin: left;
+}
+
+.arrow span:after {
+  content: '\25b6';
+  position: absolute;
+  opacity: 0;
+  right: -1em;
+}
+
+.scale span:after {
+  transform: scale(0);
+  transform-origin: left;
+}
+
+.add-btn {
+  width: 8em;
+}
+
+.add-btn:hover span {
+  padding-right: 1em;
+}
+
+.add-btn:hover span:after {
+  transform: scale(1.3);
 }

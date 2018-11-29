@@ -20,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
   ],
   declarations: [
     MembersComponent,
