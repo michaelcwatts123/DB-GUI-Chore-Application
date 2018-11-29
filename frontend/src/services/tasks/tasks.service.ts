@@ -7,7 +7,7 @@ import { Task, Member } from '../../domain/models';
 @Injectable()
 export class TasksService {
 
-  protected endpoint = "http://ec2-18-222-217-233.us-east-2.compute.amazonaws.com:8080";
+  protected endpoint = 'http://18.217.5.234:8080';
 
   protected httpOptions = {
     headers: new HttpHeaders({
