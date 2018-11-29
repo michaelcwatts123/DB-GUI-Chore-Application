@@ -64,7 +64,7 @@ input.toggle-switch:checked + label {
 }
 input.toggle-switch:checked + label:after {
   content: "Parent";
-  margin-left: 4.2em;
+  margin-left: 3.6em;
 }
 
 .form-label-placeholder:hover {

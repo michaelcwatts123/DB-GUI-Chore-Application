@@ -1,5 +1,14 @@
 .card {
-  box-shadow: -1px 1px 5px #52525265;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 8px #52525220;
+}
+
+.card-header {
+  border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+}
+
+.card-footer {
+  border-radius: 0 0 calc(1rem - 1px) calc(1rem - 1px);
 }
 
 #rating-container {
