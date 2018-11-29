@@ -36,13 +36,17 @@
           <tbody>
             <ng-container *ngFor="let parent of parents; let i = index">
               <tr>
-                <td class="h5">{{ parent.firstName + " " + parent.lastName }}</td>
-                <td><button
-                  class="btn btn-primary"
-                  (click)="editMember({member: parent, index: i})">Edit</button>
-                <button (click)="deleteMember({member: parent, index: i})"  class="faster-animated btn btn-warning">
-                  <fa-icon [icon]="faTimes"></fa-icon>
-                </button></td>
+                <td>
+                  <div class="h5 d-flex justify-content-center">{{ parent.firstName + " " + parent.lastName }}</div>
+                  <div class="d-flex justify-content-around">
+                    <button
+                      class="btn btn-primary"
+                      (click)="editMember({member: parent, index: i})">Edit</button>
+                    <button (click)="deleteMember({member: parent, index: i})"  class="faster-animated btn btn-warning">
+                      <fa-icon [icon]="faTimes"></fa-icon>
+                    </button>
+                  </div>
+                </td>
               </tr>
             </ng-container>
           </tbody>
