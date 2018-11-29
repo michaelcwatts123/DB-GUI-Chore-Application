@@ -68,7 +68,7 @@
         </div> -->
         <table class="table table-striped rounded">
           <tbody>
-            <tr *ngIf="tasks?.length == 0"><td>No Tasks To Display</td></tr>
+            <tr class="table-info" *ngIf="tasks?.length == 0"><td>No Tasks To Display</td></tr>
             <tr *ngFor="let task of tasks" [ngSwitch]="task.status.toLowerCase()">
               <td>{{ task.taskTitle }}</td>
               <td>{{ task.firstName }}</td>

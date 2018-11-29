@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class FamilyService {
 
-  protected endpoint = 'http://ec2-18-222-217-233.us-east-2.compute.amazonaws.com:8080';
+  protected endpoint = 'http://18.217.5.234:8080';
 
   protected httpOptions = {
     headers: new HttpHeaders({
@@ -42,6 +42,12 @@ export class FamilyService {
     };
     return this.httpClient.
       put<any>(`${this.endpoint}/familyInfo/edit/${familyID}`, body, this.httpOptions).
+      pipe(catchError(this.handleException));
+  }
+
+  deleteFamily(familyID: number) {
+    return this.httpClient.
+      delete<any>(`${this.endpoint}/familyInfo/delete/${familyID}`, this.httpOptions).
       pipe(catchError(this.handleException));
   }
 

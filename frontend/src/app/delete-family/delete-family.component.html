@@ -1,0 +1,25 @@
+<body *ngIf="lastName">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      <h2 id="title">{{lastName}} Family</h2>
+      <div class="card text-center" id="newAccountCard">
+        <div class="card-body">
+          <p>Are you sure you want to delete your family?</p>
+          <p>This action cannot be undone.</p>
+          <div class="row">
+            <div class="col-6">
+                <button class="btn btn-info btn-block" [routerLink]="['/family', familyID]">Go Back</button>
+            </div>
+            <div class="col-6">
+              <button class="btn btn-success btn-block" (click)="canDelete()">Continue</button>
+            </div>
+          </div>
+          <button *ngIf="canDeleteBool" class="btn btn-danger btn-block" (click)="delete()">Delete Family</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-3"></div>
+  </div>
+</body>
+
