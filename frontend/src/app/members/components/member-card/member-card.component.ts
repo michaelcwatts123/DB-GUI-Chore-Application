@@ -14,7 +14,7 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from 
           <h3>{{ member.firstName + " " + member.lastName }}</h3>
           <div *ngIf="member.isGrounded" class="badge badge-warning p-2">Grounded</div>
         </span>
-        <button (click)="deleteMember()"><fa-icon [icon]="faTimes"></fa-icon></button>
+        <button (click)="deleteMember()" class="btn btn-warning"><fa-icon [icon]="faTimes"></fa-icon></button>
       </div>
       <div class="card-body">
         <div class="d-flex justify-content-around">
@@ -24,7 +24,7 @@ import { Component, EventEmitter, Input, Output, ChangeDetectionStrategy } from 
               <div *ngIf="member.rating === null" id="rating-overlay">
                 <h5>None</h5>
               </div>
-              <app-rating [numStars]="member.rating" id="rating"></app-rating>
+              <app-rating [numStars]="member.rating" id="rating" [ngClass]="{'opaque' : member.rating === null}"></app-rating>
             </div>
           </div>
            <div class="d-flex flex-column align-items-center" (click)="viewTasks()">
