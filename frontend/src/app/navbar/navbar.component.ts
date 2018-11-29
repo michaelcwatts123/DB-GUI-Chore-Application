@@ -36,4 +36,11 @@ export class NavbarComponent implements OnInit {
     return false;
   }
 
+  canSee() {
+    if (JSON.parse(window.sessionStorage.getItem('userType'))==1) {
+      return true;
+    }
+    return false;
+  }
+
 }
