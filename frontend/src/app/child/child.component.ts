@@ -17,7 +17,7 @@ export class ChildComponent implements OnInit {
   faStar = faStar;
   faStarHalfAlt = faStarHalfAlt;
 
-  userID: number;
+  userID: number = +JSON.parse(window.sessionStorage.getItem('userID'));
   child: Child;
   isGrounded = true;
   tasks: Task[];
@@ -29,7 +29,6 @@ export class ChildComponent implements OnInit {
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.userID = this.activatedRoute.snapshot.params['id'];
     this.loadChild();
   }
 
@@ -37,10 +36,12 @@ export class ChildComponent implements OnInit {
     this.memberService.getMember(this.userID).subscribe(childInfo => {
       this.child = childInfo;
       this.childrenService.getChildDetails(this.userID).subscribe(childDetails => {
-        this.child.rating = +childDetails.rating;
         this.child.isGrounded = !!+childDetails.groundedStatus;
         this.tasksService.getUserTasks(this.userID).subscribe(childTasks => {
           this.child.tasks = childTasks;
+          this.childrenService.getChildAvgRating(this.userID).subscribe(result => {
+            this.child.rating = result["avg(TD.taskRating)"];
+          })
         });
       });
     });
