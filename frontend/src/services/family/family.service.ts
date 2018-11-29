@@ -45,6 +45,12 @@ export class FamilyService {
       pipe(catchError(this.handleException));
   }
 
+  deleteFamily(familyID: number) {
+    return this.httpClient.
+      delete<any>(`${this.endpoint}/familyInfo/delete/${familyID}`, this.httpOptions).
+      pipe(catchError(this.handleException));
+  }
+
   protected handleException(exception: any) {
     const message = `${exception.status} : ${exception.statusText}\r\n${exception.message}`;
     alert(message);

@@ -9,6 +9,7 @@ CREATE TABLE Users(
 	lastName varchar(255),
 	firstName varchar(255),
 	PRIMARY KEY (userID)
+	FOREIGN KEY (familyID) REFERENCES FamilyInfo(familyID) ON DELETE CASCADE
 );
 
 -- Contact info should be consistent for entire family
@@ -30,7 +31,7 @@ CREATE TABLE UserDetails(
 	password varchar(255),
     userType bool,
     FOREIGN KEY (userID) REFERENCES Users(userID) ON DELETE CASCADE,
-    FOREIGN KEY (familyID) REFERENCES FamilyInfo(familyID) ON DELETE CASCADE
+    
 );
 
 -- 1 = gold, 2 = silver, 3 = bronze
