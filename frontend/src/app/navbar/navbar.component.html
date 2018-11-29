@@ -21,6 +21,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
           <a class="dropdown-item" [routerLink]="['editFamily', this.familyID]">Edit Address</a>
+          <a class="dropdown-item" id="deleteFamily" [routerLink]="['deleteFamily', this.familyID]">Delete Family</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" (click)="logout()">Log Out</a>
         </div>

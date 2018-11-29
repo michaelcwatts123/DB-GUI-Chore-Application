@@ -24,6 +24,7 @@ import { MembersComponent } from './members/containers/members.component';
 import { MemberDeleteModalComponent } from './members/components/member-delete-modal/member-delete-modal.component';
 import { SharedModule } from './shared/shared.module';
 import { EditFamilyComponent } from './edit-family/edit-family.component';
+import { DeleteFamilyComponent } from './delete-family/delete-family.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { EditFamilyComponent } from './edit-family/edit-family.component';
     TaskNotificationComponent,
     NavbarComponent,
     MemberDeleteModalComponent,
-    EditFamilyComponent
+    EditFamilyComponent,
+    DeleteFamilyComponent
   ],
   imports: [
     AppRoutingModule,
